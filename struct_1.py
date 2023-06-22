@@ -43,6 +43,25 @@ class Screen :
         self.width = width
         self.hight = hight
 
+        self.checkScreen()
+
+
+    def checkScreen(self , ):
+
+        centerStr = " " * (self.width - 2)
+
+        print("请调整窗口大小直到可以正常显示下方矩形,按回车以继续")
+
+        for row in range(self.width) :
+                print("*" , end="")
+
+        for line in range(self.hight - 2) :
+            print(f"\n*{centerStr}*")
+
+        for row in range(self.width) :
+                print("*" , end="")
+
+        input()
 
     def setWide(self , newWidth : int ) -> None :
 
@@ -138,16 +157,4 @@ class Screen :
 
 #此为程序入口,__name__变量是一个特殊变量,只有当该文件为主文件运行时,__name__ 为 __main__, 类似于c++中的 int main
 if __name__ == "__main__" :
-
-    charlib = {
-        "h":
-        """*     *   
-*     *   
-*******   
-*     *   
-*     *   
-"""
-    }
-
-    screen = Screen(100 , 20)
-    print(screen.bigChar(charlib , "hh"))
+    S = Screen(100,10)
